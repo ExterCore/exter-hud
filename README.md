@@ -21,15 +21,15 @@
 # Radio Channel Exports: 
 ## (you can verify how to do in our qb-radio resource)
 
-exports['exter-hud']:radioenter(true, channel) // PUT IN YOUR RADIO RESOURCE
+```exports['exter-hud']:radioenter(true, channel)``` // PUT IN YOUR RADIO RESOURCE
 
 - Talking on Radio Export: 
 
-exports["exter-hud"]:talking(true, true) // PUT IN YOUR VOICE RESOURCE ON KEYBIND FOR RADIO TALKING
+```exports["exter-hud"]:talking(true, true)``` // PUT IN YOUR VOICE RESOURCE ON KEYBIND FOR RADIO TALKING
 
 - Pursuit Mode Export:
 
-exports["exter-hud"]: SendPursuitValue(howmuch) // PUT IN YOUR PURSUIT RESOURCE FOR PURSUIT MODE (If you don't want to use the one that we provided on HUD)
+```exports["exter-hud"]: SendPursuitValue(howmuch)``` // PUT IN YOUR PURSUIT RESOURCE FOR PURSUIT MODE (If you don't want to use the one that we provided on HUD)
 
 ## ORIGINAL REPOSITORY
 [ROHKANE](https://github.com/rohKane/Kane-qb-hud-Nopixel-4.0-inspired)
