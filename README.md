@@ -18,6 +18,8 @@
 ## YOU DO NOT NEED HRSGear IN THIS SCRIPT. YOU JUST NEED IT BASEEVENT DEPENDENCIES YOU CAN DOWNLOAD
 [baseevents](https://github.com/citizenfx/cfx-server-data/tree/master/resources/%5Bsystem%5D/baseevents)
 
+## AND TO OPEN THE MENU YOU CAN USE (/HUD)
+
 # Radio Channel Exports: 
 ## (you can verify how to do in our qb-radio resource)
 
