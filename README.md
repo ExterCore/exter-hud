@@ -15,7 +15,7 @@
 ![hud3](https://github.com/user-attachments/assets/0306de11-b318-4a50-a513-d2ca85cd323b)
 
 # NOTED
-## THIS SCRIPT REQUIRES BASEEVENT DEPENDENCIES YOU CAN DOWNLOAD
+## YOU DO NOT NEED HRSGear IN THIS SCRIPT. YOU JUST NEED IT BASEEVENT DEPENDENCIES YOU CAN DOWNLOAD
 [baseevents](https://github.com/citizenfx/cfx-server-data/tree/master/resources/%5Bsystem%5D/baseevents)
 
 # Radio Channel Exports: 
