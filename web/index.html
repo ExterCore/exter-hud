@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"      
+    ></script>
+    <script>
+      window.addEventListener('message', function(event) {
+          if (event.data.action === 'setNumber') {
+              document.querySelector('.inter500.p-black62').textContent = event.data.number;
+          }
+      });
+      </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="background-color: transparent">  
+    <div class="crosshair-wrapper">
+      <img src="crosshair.png" class="crosshair" style="display: none;">
+    </div>
+    <div id="preferences" class="wrapper center-wrapper" style="z-index: 100">
+      <!-- <input class="input-field" tabindex="0"><input class="input-field" tabindex="-1"> -->
+      <div
+        class="_container_1hwi9_2"
+        style="
+          pointer-events: all;
+          transition: all 350ms ease-in-out 0s;
+          height: max(500px, 76.57vh);
+          display: none;
+        "
+      >
+        <div class="_header_1hwi9_16">  
+          <div class="_row_1hwi9_27">
+            <svg
+              class="_icon_1hwi9_34"
+              width="2.5vh"
+              height="2.68vh"
+              viewBox="0 0 27 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.6005 0.125616C10.6701 0.393673 9.86309 1.15662 9.52028 2.09223C9.45893 2.25953 9.40083 2.73338 9.37145 3.30574C9.31626 4.38023 9.22632 4.66402 8.79142 5.13593C8.41173 5.54792 7.87331 5.77572 7.2795 5.77572C6.83936 5.77572 6.77835 5.75585 5.97385 5.35014C5.0602 4.88936 4.75653 4.79675 4.15929 4.79675C3.65536 4.79675 3.28776 4.88457 2.78273 5.12564C2.11321 5.44521 1.72491 5.89014 0.96416 7.20939C0.0323889 8.82524 -0.119477 9.3468 0.0731541 10.2697C0.278079 11.2515 0.80537 11.9473 1.78515 12.5287C2.77218 13.1144 3.1194 13.6277 3.1194 14.5011C3.1194 15.3745 2.77218 15.8879 1.78515 16.4735C0.808347 17.0532 0.27782 17.7512 0.0751599 18.7236C-0.0321879 19.2384 0.00508303 19.7808 0.183737 20.3028C0.295032 20.628 1.2853 22.3902 1.67554 22.9575C2.18517 23.6983 3.22681 24.2117 4.21099 24.2071C4.75634 24.2045 5.08149 24.1021 5.97385 23.6521C6.77835 23.2464 6.83936 23.2265 7.2795 23.2265C7.87331 23.2265 8.41173 23.4543 8.79142 23.8663C9.22632 24.3382 9.31626 24.622 9.37145 25.6965C9.40083 26.2688 9.45893 26.7427 9.52028 26.91C9.87189 27.8696 10.7173 28.6488 11.6745 28.8953C12.1436 29.0161 14.7693 29.0397 15.2564 28.9275C15.966 28.764 16.7808 28.183 17.1739 27.5603C17.5131 27.0229 17.5991 26.6852 17.6485 25.6965C17.7023 24.6218 17.7917 24.3389 18.2273 23.8663C18.607 23.4543 19.1454 23.2265 19.7392 23.2265C20.1793 23.2265 20.2404 23.2464 21.0449 23.6521C21.5091 23.8862 22.0199 24.1065 22.18 24.1416C23.1735 24.3596 24.2877 24.0345 25.0174 23.3139C25.2908 23.0439 25.5649 22.642 26.0531 21.7953C26.782 20.5312 26.8849 20.2959 26.9738 19.6897C27.1021 18.8146 26.7496 17.7676 26.1132 17.1334C25.9251 16.946 25.5202 16.6414 25.2134 16.4566C24.9066 16.2717 24.5607 16.0255 24.4449 15.9094C23.7126 15.1761 23.7126 13.8261 24.4449 13.0928C24.5607 12.9767 24.9066 12.7305 25.2134 12.5456C25.5202 12.3608 25.9251 12.0562 26.1132 11.8688C26.7496 11.2346 27.1021 10.1877 26.9738 9.31256C26.8849 8.7063 26.782 8.47099 26.0531 7.20687C25.2939 5.89027 24.9052 5.44508 24.236 5.12564C23.7309 4.88457 23.3633 4.79675 22.8594 4.79675C22.2622 4.79675 21.9585 4.88936 21.0449 5.35014C20.2404 5.75585 20.1793 5.77572 19.7392 5.77572C19.1454 5.77572 18.607 5.54792 18.2273 5.13593C17.7924 4.66402 17.7025 4.38023 17.6473 3.30574C17.6179 2.73338 17.5598 2.25953 17.4984 2.09223C17.1495 1.13992 16.2971 0.350119 15.3525 0.104065C14.7791 -0.0453013 12.1412 -0.0301576 11.6005 0.125616ZM14.8301 9.51642C15.1018 9.58599 15.5928 9.78073 15.9212 9.94925C16.4104 10.2003 16.6297 10.3673 17.1361 10.8737C17.6425 11.3802 17.8094 11.5996 18.0605 12.0889C18.4954 12.9364 18.6357 13.5131 18.6399 14.4688C18.6441 15.4473 18.5301 15.9367 18.09 16.8309C17.7951 17.4302 17.6826 17.5831 17.1369 18.1254C16.0783 19.1776 15.0081 19.6262 13.5417 19.6324C12.6451 19.6363 12.1238 19.5308 11.4102 19.201C10.3328 18.7031 9.49045 17.9154 8.96277 16.9123C8.5194 16.0695 8.38112 15.4964 8.38112 14.5011C8.38112 13.5117 8.5148 12.9531 8.95824 12.0889C9.2093 11.5996 9.37617 11.3802 9.88257 10.8737C10.3852 10.371 10.6092 10.2001 11.0829 9.95747C12.0251 9.47494 12.7551 9.31127 13.7448 9.36058C14.07 9.37683 14.5584 9.44692 14.8301 9.51642Z"
+                fill="#00F8B9"
+              ></path>
+            </svg>
+            <div class="_column_1hwi9_37">
+              <div class="_title_1hwi9_44">Settings menu</div>
+              <div class="_description_1hwi9_53">Change your settings</div>
+            </div>
+          </div>
+          <div class="_saveButton_1hwi9_61">Save</div>
+        </div>
+        <div class="_divider_1hwi9_83"></div>
+        <div class="_bottomContainer_1hwi9_89">
+          <div class="_tabs_1hwi9_98">
+            <div class="_tab_1hwi9_98 false" menuid="gameplay">
+              <div class="_icon_1hwi9_34">
+                <svg
+                  width="4.629vh"
+                  height="4.35vh"
+                  viewBox="0 0 50 47"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M27.5687 0.187784C27.3961 0.293522 23.6213 3.30318 19.1802 6.87596L11.1056 13.3718H7.2095C3.17467 13.3718 2.474 13.4247 1.7788 13.7812C1.18534 14.0856 0.56743 14.7183 0.270997 15.3251L0 15.8801V23.5031V31.1261L0.270997 31.681C0.56743 32.2878 1.18534 32.9205 1.7788 33.2249C2.474 33.5815 3.17467 33.6343 7.2095 33.6343H11.1056L19.2005 40.1481C23.6526 43.7306 27.4478 46.7404 27.634 46.8366C28.3194 47.1904 29.2473 46.9506 29.7085 46.3006L29.9368 45.9786V23.5031V1.02749L29.7085 0.705558C29.2388 0.0434878 28.2101 -0.205465 27.5687 0.187784ZM41.2674 6.5793C40.4484 6.95327 40.0779 8.03289 40.494 8.83364C40.5885 9.01551 40.9859 9.5084 41.3771 9.9289C46.0396 14.9415 47.769 22.0558 45.968 28.8146C45.1719 31.8025 43.5228 34.7704 41.3771 37.0772C40.512 38.0072 40.3204 38.3549 40.328 38.9809C40.3399 39.9648 41.258 40.7255 42.2524 40.5756C42.802 40.4927 43.4793 39.9017 44.6783 38.4587C47.3736 35.2147 49.1536 31.2257 49.8157 26.9457C50.0614 25.3571 50.0614 21.649 49.8157 20.0604C49.0796 15.3019 47.0022 10.979 43.8176 7.57846C42.6726 6.35602 42.1797 6.16294 41.2674 6.5793ZM36.5715 11.3006C36.1269 11.5037 35.72 12.0355 35.6141 12.5521C35.4965 13.1258 35.7139 13.5954 36.501 14.4682C38.1728 16.322 39.3061 18.5772 39.7806 20.9948C39.9622 21.9197 39.9622 25.0864 39.7806 26.0113C39.3061 28.4289 38.1728 30.6841 36.501 32.5379C35.4768 33.6735 35.3478 34.2519 35.9201 35.1421C36.1801 35.5465 36.7899 35.8908 37.253 35.8944C37.924 35.8997 38.4535 35.5093 39.5175 34.2244C41.6385 31.663 42.9166 28.619 43.2845 25.2528C43.7706 20.804 42.3919 16.237 39.5198 12.7817C38.699 11.7943 38.3234 11.4443 37.8889 11.2621C37.4126 11.0623 37.0717 11.0723 36.5715 11.3006Z"
+                    fill="url(#paint0_radial_291_777_1)"
+                  ></path>
+                  <defs>
+                    <radialGradient
+                      id="paint0_radial_291_777_1"
+                      cx="0"
+                      cy="0"
+                      r="1"
+                      gradientUnits="userSpaceOnUse"
+                      gradientTransform="translate(25 23.5) rotate(90) scale(41.8594 44.5312)"
+                    >
+                      <stop stop-color="white"></stop>
+                      <stop
+                        offset="1"
+                        stop-color="white"
+                        stop-opacity="0"
+                      ></stop>
+                    </radialGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div class="_bottom_1hwi9_89">
+                <div class="_title_1hwi9_44">Gameplay</div>
+                <div class="_description_1hwi9_53">Settings</div>
+                <div class="_line_1hwi9_169"></div>
+              </div>
+            </div>
+            <div class="_tab_1hwi9_98 _active_1hwi9_175" menuid="hud">
+              <div class="_icon_1hwi9_34">
+                <svg
+                  width="3.98vh"
+                  height="3.98vh"
+                  viewBox="0 0 43 43"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2.17442 0.106347C1.61467 0.279446 0.921903 0.800595 0.557145 1.32292C0.00168361 2.11819 -0.0205988 2.28969 0.00773767 5.5435L0.0328789 8.43059L0.280087 8.93416C0.594899 9.57559 1.15852 10.1394 1.79974 10.4543L2.30316 10.7016H21.5164H40.7297L41.2331 10.4543C41.8744 10.1394 42.438 9.57559 42.7528 8.93416L43 8.43059V5.36056V2.29053L42.7528 1.78696C42.438 1.14553 41.8744 0.581739 41.2331 0.26683L40.7297 0.0195447L21.6426 0.00398427C5.47953 -0.00913697 2.49706 0.00650757 2.17442 0.106347ZM2.60754 14.3693C1.62746 14.536 0.694959 15.2606 0.256543 16.1961L0.0328789 16.6734V28.7012V40.729L0.280087 41.2326C0.594899 41.874 1.15852 42.4378 1.79974 42.7527L2.30316 43H9.87075H17.4383L17.9008 42.7633C18.5428 42.4348 19.1847 41.7788 19.4714 41.1584L19.7086 40.6449V28.7433C19.7086 17.2439 19.7032 16.8274 19.5485 16.4211C19.2034 15.515 18.5773 14.8809 17.6614 14.5105L17.1861 14.3183L10.123 14.3054C6.17003 14.2981 2.86072 14.3262 2.60754 14.3693ZM26.0029 14.3606C24.6986 14.5517 23.6433 15.555 23.3608 16.8727C23.3061 17.128 23.2831 18.6181 23.299 20.8872L23.3243 24.4957L23.587 25.0424C23.9074 25.7088 24.4192 26.2346 25.09 26.5863L25.5945 26.8508H33.1621H40.7297L41.2331 26.6035C41.8744 26.2886 42.438 25.7248 42.7528 25.0834L43 24.5798V20.6248V16.6699L42.7241 16.1094C42.2534 15.1529 41.4136 14.5387 40.3376 14.364C39.7193 14.2637 26.6862 14.2605 26.0029 14.3606ZM26.0029 30.5098C24.6986 30.7009 23.6433 31.7042 23.3608 33.0219C23.3061 33.2772 23.2831 34.7674 23.299 37.0364L23.3243 40.6449L23.587 41.1916C23.9074 41.858 24.4192 42.3838 25.09 42.7355L25.5945 43H33.1621H40.7297L41.2331 42.7527C41.8744 42.4378 42.438 41.874 42.7528 41.2326L43 40.729V36.7741V32.8191L42.7241 32.2586C42.2534 31.3021 41.4136 30.6879 40.3376 30.5132C39.7193 30.4129 26.6862 30.4098 26.0029 30.5098Z"
+                    fill="url(#paint0_radial_291_760)"
+                  ></path>
+                  <defs>
+                    <radialGradient
+                      id="paint0_radial_291_760"
+                      cx="0"
+                      cy="0"
+                      r="1"
+                      gradientUnits="userSpaceOnUse"
+                      gradientTransform="translate(21.5 21.5) rotate(90) scale(38.2969)"
+                    >
+                      <stop stop-color="white"></stop>
+                      <stop
+                        offset="1"
+                        stop-color="white"
+                        stop-opacity="0"
+                      ></stop>
+                    </radialGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div class="_bottom_1hwi9_89">
+                <div class="_title_1hwi9_44">Hud</div>
+                <div class="_description_1hwi9_53">Settings</div>
+                <div class="_line_1hwi9_169"></div>
+              </div>
+            </div>
+            <div class="_tab_1hwi9_98 false" menuid="help">
+              <div class="_icon_1hwi9_34">
+                <svg
+                  width="4.44vh"
+                  height="4.35vh"
+                  viewBox="0 0 48 47"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M21.8054 0.0535655C13.4051 0.3821 6.34795 3.06933 3.64381 6.96953C1.86689 9.53223 0.654637 13.7648 0.135436 19.2194C-0.0433695 21.0984 -0.0456201 26.0057 0.13161 27.8157C0.774929 34.3879 2.30181 38.9141 4.67073 41.2715C7.62615 44.2127 12.7781 46.1509 19.4423 46.8287C21.6878 47.0571 26.3115 47.0571 28.557 46.8287C35.1639 46.1568 40.3036 44.2433 43.2558 41.3567C45.66 39.006 47.2422 34.3566 47.8635 27.8157C48.0455 25.9012 48.0455 21.134 47.8635 19.2194C47.3447 13.7575 46.1331 9.53322 44.3464 6.95631C43.4019 5.59412 41.7812 4.27062 39.7535 3.20566C36.4463 1.46887 31.3864 0.257232 26.7566 0.0935714C25.8901 0.0629332 24.8774 0.0235886 24.506 0.00606526C24.1347 -0.0113478 22.9194 0.0100328 21.8054 0.0535655ZM26.1939 11.2884C28.1114 11.8625 29.856 13.3049 30.7211 15.0315C32.518 18.6175 30.726 23.1195 26.841 24.7795L26.3627 24.9838L26.3603 26.262C26.3583 27.2703 26.3138 27.6333 26.1494 27.9811C25.4181 29.5283 23.374 29.8257 22.2315 28.5513C21.6855 27.9423 21.6077 27.5303 21.6528 25.4904C21.6924 23.6996 21.6973 23.669 22.0625 22.9426C22.6164 21.8411 23.2338 21.2854 24.5965 20.6622C26.2054 19.9264 26.7174 19.2756 26.7137 17.9711C26.7071 15.5514 23.7241 14.3981 22.008 16.1514C21.5555 16.6138 21.3435 17.1099 21.2387 17.952C21.1302 18.8233 21.049 19.0138 20.5587 19.5452C19.5185 20.6727 17.6276 20.4642 16.8291 19.1338C16.567 18.6972 16.5191 18.4977 16.5318 17.8969C16.5987 14.7347 19.1945 11.7958 22.5249 11.112C23.5273 10.9061 25.1827 10.9857 26.1939 11.2884ZM24.8753 31.9544C25.7573 32.3153 26.3578 33.1834 26.3578 34.0977C26.3578 35.3442 25.2696 36.4121 23.9997 36.4121C22.3606 36.4121 21.1851 34.7082 21.8113 33.24C22.3133 32.0631 23.7093 31.4773 24.8753 31.9544Z"
+                    fill="url(#paint0_radial_291_787)"
+                  ></path>
+                  <defs>
+                    <radialGradient
+                      id="paint0_radial_291_787"
+                      cx="0"
+                      cy="0"
+                      r="1"
+                      gradientUnits="userSpaceOnUse"
+                      gradientTransform="translate(24 23.5) rotate(90) scale(41.8594 42.75)"
+                    >
+                      <stop stop-color="white"></stop>
+                      <stop
+                        offset="1"
+                        stop-color="white"
+                        stop-opacity="0"
+                      ></stop>
+                    </radialGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div class="_bottom_1hwi9_89">
+                <div class="_title_1hwi9_44">Help Guides</div>
+                <div class="_description_1hwi9_53">Settings</div>
+                <div class="_line_1hwi9_169"></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="_options_1hwi9_191"
+            style="display: none"
+            menuid="gameplay"
+          >
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Crosshair</div>
+                <div class="_description_1hwi9_53">Toggle the crosshair</div>
+              </div>
+
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch crosshairCb"
+                  id="np-switch-hud.crosshair.enabled"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.crosshair.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Persistent Character (Wounds)</div>
+                <div class="_description_1hwi9_53">
+                  Toggle persistent character wounds
+                </div>
+              </div>
+
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch woundsCb"
+                  id="np-switch-hud.wounds.enabled"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.wounds.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Golf Ball Camera</div>
+                <div class="_description_1hwi9_53">
+                  Toggle the golf ball camera
+                </div>
+              </div>
+
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch golfCb"
+                  id="np-switch-hud.golf.enabled"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.golf.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Disable Large Scene Text</div>
+                <div class="_description_1hwi9_53">
+                  Toggle the largems scene text
+                </div>
+              </div>
+
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch sceneCb"
+                  id="np-switch-hud.scene.enabled"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.scene.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">
+                  Only Show Scenes While Peeking
+                </div>
+                <div class="_description_1hwi9_53">
+                  Toggle the large scene text
+                </div>
+              </div>
+
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch sceneslargeCb"
+                  id="np-switch-hud.sceneslarge.enabled"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.sceneslarge.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Enable /outfits Preview</div>
+                <div class="_description_1hwi9_53">
+                  Toggle the /outfits preview
+                </div>
+              </div>
+
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch outfitsCb"
+                  id="np-switch-hud.outfits.enabled"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.outfits.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Enable /outfits Camera</div>
+                <div class="_description_1hwi9_53">
+                  Toggle the /outfits camera
+                </div>
+              </div>
+
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch outfitscameraCb"
+                  id="np-switch-hud.outfitscamera.enabled"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.outfitscamera.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Disable Interact Prompts</div>
+                <div class="_description_1hwi9_53">
+                  Toggle the interact prompts
+                </div>
+              </div>
+
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch interactCb"
+                  id="np-switch-hud.interact.enabled"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.interact.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">
+                  Enable localized weather zones
+                </div>
+                <div class="_description_1hwi9_53">
+                  Toggle the localized weather zones
+                </div>
+              </div>
+
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch weatherCb"
+                  id="np-switch-hud.weather.enabled"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.weather.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+          </div>
+          <div class="_options_1hwi9_191" menuid="hud">
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Select Preset (Currently: 1)</div>
+                <div class="_description_1hwi9_53">
+                  Save settings for the selected preset, and then use /hud
+                  [:number]
+                </div>
+              </div>
+              <div class="settings-dropdown np-dropdow-active">
+                <input
+                  class="np-text-box input-focused"
+                  trink="preference"
+                  type="text"
+                  readonly=""
+                  placeholder="Select item..."
+                  value="1"
+                />
+                <div class="options">
+                  <div>Select item...</div>
+                  <div class="option">1</div>
+                  <div class="option">2</div>
+                  <div class="option">3</div>
+                </div>
+              </div>
+            </div>
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Show Oxygen when relevant</div>
+                <div class="_description_1hwi9_53">Toggle the oxygen bar</div>
+              </div>
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch oxygen_input"
+                  id="np-switch-hud.status.oxygen.enabled"
+                  name="oxygen"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.status.oxygen.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+            <!-- <div class="_option_1hwi9_191">
+                       <div class="_texts_1hwi9_215">
+                          <div class="_title_1hwi9_44">Hide  Enhancements</div>
+                          <div class="_description_1hwi9_53">Toggle the enhancements</div>
+                       </div>
+                       <div class="settings-switch-wrapper" style="justify-content: space-between;"><input class="np-switch hideenchantments_input" id="np-switch-hud.status.buffs.disabled" name="hideenchantments" type="checkbox" checked=""><label class="np-switch-toggle enabled" for="np-switch-hud.status.buffs.disabled"><span class="np-switch-button"></span></label></div>
+                    </div> -->
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Minimap Enabled</div>
+                <div class="_description_1hwi9_53">Toggle the minimap</div>
+              </div>
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch minimap_input"
+                  id="np-switch-hud.vehicle.minimap.enabled"
+                  name="minimap"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.vehicle.minimap.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Show Harness durability</div>
+                <div class="_description_1hwi9_53">
+                  Toggle the harness durability
+                </div>
+              </div>
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch harness_input"
+                  id="np-switch-hud.vehicle.harness.enabled"
+                  name="harness"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.vehicle.harness.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Show Nitrous levels</div>
+                <div class="_description_1hwi9_53">
+                  Toggle the nitrous levels
+                </div>
+              </div>
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch nitrous_input"
+                  id="np-switch-hud.vehicle.nitrous.enabled"
+                  name="nitrous"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.vehicle.nitrous.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Show Black Bars</div>
+                <div class="_description_1hwi9_53">Toggle the black bars</div>
+              </div>
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch black-bar-checkbox"
+                  id="np-switch-hud.blackbars.enabled"
+                  type="checkbox"
+                /><label
+                  class="np-switch-toggle"
+                  for="np-switch-hud.blackbars.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Black Bar Size</div>
+                <div class="_description_1hwi9_53">
+                  Percentage of screen taken - ex 5%
+                </div>
+              </div>
+              <div class="settings-input-container input-focused">
+                <label class="np-input-label focused">Black Bar Size</label
+                ><input class="black-bar-input" value="10" />
+              </div>
+            </div>
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Speedometer FPS</div>
+                <div class="_description_1hwi9_53">
+                  The higher the FPS, the more demanding this is on your machine
+                </div>
+              </div>
+              <div class="settings-dropdown np-dropdow-active">
+                <input
+                  class="np-text-box input-focused"
+                  type="text"
+                  readonly=""
+                  name="speedometerFps"
+                  placeholder="Select item..."
+                  value="15"
+                />
+                <div class="options">
+                  <div>Select item...</div>
+                  <div class="option">60</div>
+                  <div class="option">45</div>
+                  <div class="option">30</div>
+                  <div class="option">15</div>
+                </div>
+              </div>
+            </div>
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Health Icon</div>
+                <div class="_description_1hwi9_53">Hide when more than...</div>
+              </div>
+              <div class="settings-input-container input-focused">
+                <label class="np-input-label focused">100 = Never Hide</label
+                ><input value="95" />
+              </div>
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch health_input"
+                  name="health"
+                  id="np-switch-hud.status.health.enabled"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.status.health.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Armor Icon</div>
+                <div class="_description_1hwi9_53">Hide when more than...</div>
+              </div>
+              <div class="settings-input-container input-focused">
+                <label class="np-input-label focused">100 = Never Hide</label
+                ><input value="95" />
+              </div>
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch armor_input"
+                  name="armor"
+                  id="np-switch-hud.status.armor.enabled"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.status.armor.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Food Icon</div>
+                <div class="_description_1hwi9_53">Hide when more than...</div>
+              </div>
+              <div class="settings-input-container input-focused">
+                <label class="np-input-label focused">100 = Never Hide</label
+                ><input value="95" />
+              </div>
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch food_input"
+                  name="food"
+                  id="np-switch-hud.status.food.enabled"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.status.food.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">Water Icon</div>
+                <div class="_description_1hwi9_53">Hide when more than...</div>
+              </div>
+              <div class="settings-input-container input-focused">
+                <label class="np-input-label focused">100 = Never Hide</label
+                ><input value="95" />
+              </div>
+              <div
+                class="settings-switch-wrapper"
+                style="justify-content: space-between"
+              >
+                <input
+                  class="np-switch water_input"
+                  name="water"
+                  id="np-switch-hud.status.water.enabled"
+                  type="checkbox"
+                  checked=""
+                /><label
+                  class="np-switch-toggle enabled"
+                  for="np-switch-hud.status.water.enabled"
+                  ><span class="np-switch-button"></span
+                ></label>
+              </div>
+            </div>
+          </div>
+          <div class="_options_1hwi9_191" style="display: none" menuid="help">
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">
+                  Finding your Windows Communication Device
+                </div>
+                <div class="_description_1hwi9_53">EXTERCITY 2.0</div>
+              </div>
+            </div>
+            <div class="_option_1hwi9_191">
+              <div class="_texts_1hwi9_215">
+                <div class="_title_1hwi9_44">FPS Capping for UI lag:</div>
+                <div class="_description_1hwi9_53">EXTERCITY 2.0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <input class="input-field" tabindex="-1"><input class="input-field" tabindex="0"> -->
+    </div>
+    <div id="root">
+      <div class="h-screen w-screen">
+        <div class="statsIndicators-cont">
+          <div class="statsIndicators-list">
+            <ul>
+
+              <li id="radio-icon" style="display: none;">
+                <div
+                  class="container"
+                  style="background: rgba(255, 255, 255, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="radio"
+                    style="
+                      background:rgba(255, 255, 255, 0.5);
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-size: 100% 100%;
+                      "
+                    >
+                      <div class="icon-ind">
+                        <div class="icon">
+                          <svg
+                            class="ind-icon"
+                            width="16"
+                            height="14"
+                            viewBox="0 0 16 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                          <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.53125 0.0142388C6.67138 0.067754 5.76944 0.304552 4.98691 0.68223C3.35609 1.46933 2.08672 2.88343 1.51916 4.54544C1.3296 5.10047 1.18947 5.8358 1.18813 6.2825L1.1875 6.48367L0.948783 6.59435C0.500158 6.8023 0.13422 7.25135 0.0342829 7.71657C0.0115954 7.82225 1.69824e-06 8.4993 1.69824e-06 9.72045C1.69824e-06 11.7693 -0.00271705 11.738 0.209408 12.127C0.334783 12.3569 0.609283 12.6418 0.820376 12.761C1.14963 12.9469 1.2925 12.9712 2.14641 12.9862L2.93344 13L2.94594 9.58584C2.95944 5.90708 2.95463 6.02026 3.12572 5.37362C3.59803 3.58864 5.09313 2.21541 7 1.81514C7.28497 1.7553 7.4165 1.74627 8 1.74627C8.57753 1.74627 8.71622 1.75561 8.98762 1.81292C9.93841 2.01363 10.8323 2.47058 11.495 3.09469C12.2805 3.83448 12.7653 4.73294 12.9766 5.84041C13.037 6.15734 13.0403 6.31951 13.0532 9.58584L13.0668 13L13.8537 12.9862C14.7075 12.9712 14.8504 12.9469 15.1796 12.761C15.3907 12.6418 15.6652 12.3569 15.7906 12.127C16.0027 11.738 16 11.7693 16 9.72045C16 8.4993 15.9884 7.82225 15.9657 7.71657C15.8657 7.25114 15.5002 6.80127 15.0547 6.59555L14.8125 6.48367V6.30786C14.8125 6.01734 14.7193 5.41334 14.6104 4.99717C14.303 3.82354 13.696 2.79486 12.8034 1.935C12.222 1.37492 11.6392 0.97447 10.9219 0.642026C9.86825 0.153764 8.71637 -0.059514 7.53125 0.0142388ZM3.87953 6.58035C3.74103 6.6338 3.62359 6.7339 3.56131 6.8515C3.50028 6.96685 3.49922 7.02395 3.50734 9.79511L3.51563 12.6211L3.60338 12.7319C3.76766 12.9395 4.07588 13.021 4.32181 12.922C4.45538 12.8682 4.61359 12.691 4.65438 12.5494C4.69928 12.3936 4.69975 7.1189 4.65488 6.96314C4.56694 6.65795 4.17709 6.46548 3.87953 6.58035ZM11.6706 6.60474C11.5165 6.6722 11.3883 6.81335 11.3451 6.96314C11.3002 7.1189 11.3007 12.3936 11.3456 12.5494C11.3864 12.691 11.5446 12.8682 11.6782 12.922C11.9241 13.021 12.2323 12.9395 12.3966 12.7319L12.4844 12.6211L12.4927 9.79511C12.5007 7.06508 12.4989 6.96528 12.4413 6.8565C12.3677 6.71761 12.297 6.65431 12.1483 6.59444C11.9962 6.53318 11.8256 6.53686 11.6706 6.60474Z"
+                          fill="white"
+                        ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="inter500 p-black62">4</p>
+              </li>
+              
+              <li>
+                <div
+                  class="container"
+                  style="background: rgba(255, 255, 255, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="voice"
+                    style="
+                      background: radial-gradient(rgba(132, 132, 132, 0), rgba(255, 255, 255, 0.5));
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+                        background-size: 100% 66%;
+                      "
+                    >
+                      <div class="icon-ind">
+                        <div class="icon">
+                          <svg
+                            class="ind-icon"
+                            width="16"
+                            height="14"
+                            viewBox="0 0 16 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M5.36604 0.0144049C3.73085 0.109315 2.16034 0.917974 1.15882 2.18079C0.363251 3.18391 -0.0505884 4.4324 0.0049463 5.66204C0.0599018 6.87987 0.415665 7.70637 1.30287 8.67745C1.41403 8.79915 1.50499 8.9059 1.50499 8.91473C1.50499 8.92352 1.36744 9.4524 1.19933 10.09C1.02037 10.7686 0.893662 11.3114 0.893662 11.3992C0.893662 11.63 1.00164 11.9144 1.16178 12.1054C1.42488 12.4193 1.38115 12.4053 4.09511 13.0477C5.44004 13.366 6.60132 13.6357 6.67574 13.6471C7.08585 13.7097 7.64225 13.4266 7.84293 13.0532C7.88045 12.9834 8.01156 12.5939 8.13434 12.1876C8.25709 11.7813 8.37128 11.4192 8.38808 11.383C8.41832 11.3177 8.42946 11.3169 9.4905 11.3044C10.6778 11.2905 10.6983 11.2875 11.0185 11.0794C11.1102 11.0199 11.2365 10.9 11.2992 10.813C11.512 10.518 11.5206 10.4718 11.5412 9.50975L11.5598 8.63943L11.9508 8.48675C12.5217 8.2638 12.6768 8.14207 12.8567 7.77562C12.9295 7.62737 12.9423 7.55991 12.9423 7.32633C12.9423 7.09458 12.9292 7.02486 12.8589 6.88161C12.7926 6.74667 12.1434 5.96723 11.5829 5.34968C11.553 5.31673 11.5244 5.18481 11.5068 4.9985C11.3024 2.83358 9.78359 0.993066 7.61951 0.287867C7.2196 0.157533 6.65051 0.0457362 6.28841 0.026345C6.12618 0.0176724 5.93554 0.00658732 5.86476 0.00173188C5.79397 -0.00312355 5.56955 0.00258696 5.36604 0.0144049ZM13.0007 9.1156C12.8505 9.20694 12.7664 9.35318 12.7664 9.523C12.7664 9.74083 12.9052 9.937 13.1015 9.99648C13.2428 10.0393 15.3507 10.3343 15.5155 10.3343C15.6683 10.3343 15.8227 10.2514 15.9327 10.1106C15.9827 10.0466 16 9.97914 16 9.84868C16 9.70207 15.9846 9.65382 15.9073 9.55757C15.8563 9.49411 15.7694 9.42461 15.7142 9.40314C15.5923 9.35569 13.4523 9.0508 13.249 9.05193C13.1589 9.05242 13.0651 9.07649 13.0007 9.1156ZM12.4698 10.2486C12.3178 10.287 12.1338 10.4767 12.1044 10.6255C12.0755 10.7716 12.1348 10.953 12.2445 11.0544C12.2926 11.0989 12.7953 11.3841 13.3616 11.6883C14.3589 12.2239 14.397 12.2413 14.5739 12.2421C14.7797 12.2429 14.8863 12.1869 15.0135 12.011C15.0756 11.9251 15.0865 11.8773 15.0762 11.737C15.0682 11.628 15.0392 11.5344 14.9954 11.476C14.8869 11.3314 12.7269 10.1918 12.6057 10.2153C12.5967 10.217 12.5356 10.232 12.4698 10.2486ZM11.5617 11.4627C11.3502 11.595 11.2582 11.8881 11.3663 12.0848C11.452 12.2407 12.9522 13.9247 13.0387 13.9622C13.1814 14.0239 13.4398 14.008 13.5612 13.93C13.7485 13.8098 13.8431 13.5402 13.7658 13.3471C13.7225 13.2391 12.2732 11.5876 12.1335 11.487C11.9855 11.3806 11.7115 11.3689 11.5617 11.4627Z"
+                              fill="white"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="container"
+                  style="background: rgba(40, 173, 103, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="health"
+                    style="
+                      background: radial-gradient(
+                        rgba(62, 178, 117, 0),
+                        rgba(62, 178, 117, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(40, 173, 103),
+                          rgb(40, 173, 103)
+                        );
+                        background-size: 100% 79%;
+                      "
+                    >
+                      <div class="icon-ind">
+                        <div class="icon">
+                          <svg
+                            class="ind-icon"
+                            width="14"
+                            height="13"
+                            viewBox="0 0 14 13"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M3.46083 0.0171699C1.69668 0.199699 0.250575 1.83158 0.0271545 3.89198C-0.188035 5.87651 0.872515 7.91999 3.3241 10.2445C4.22683 11.1004 5.57845 12.1564 6.69993 12.8818C6.96604 13.0539 7.05557 13.0449 7.41499 12.8096C7.90449 12.4891 8.77197 11.8514 9.31297 11.4144C12.0514 9.20233 13.6411 7.03416 13.9515 5.08777C14.0262 4.61917 14.0135 3.94958 13.921 3.47992C13.6509 2.10847 12.8774 0.993135 11.7878 0.404C10.9513 -0.0482602 9.91046 -0.1217 9.04678 0.210644C8.53745 0.406641 8.1013 0.695355 7.70809 1.09683C7.4696 1.34035 7.17707 1.71521 7.06911 1.91573C7.04086 1.96816 7.01075 2.01109 7.00219 2.01109C6.99363 2.01109 6.96352 1.96816 6.93528 1.91573C6.82731 1.71521 6.53479 1.34035 6.2963 1.09683C5.51826 0.302451 4.48957 -0.0892494 3.46083 0.0171699Z"
+                              fill="white"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="container"
+                  style="background: rgba(41, 134, 219, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="armor"
+                    style="
+                      background: radial-gradient(
+                        rgba(41, 134, 219, 0),
+                        rgba(41, 134, 219, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(41, 134, 219),
+                          rgb(41, 134, 219)
+                        );
+                        background-size: 100% 0%;
+                      "
+                    >
+                      <div class="icon-ind">
+                        <div class="icon icon-red">
+                          <svg
+                            class="ind-icon"
+                            width="12"
+                            height="13"
+                            viewBox="0 0 12 13"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M5.89486 0.005165C5.6544 0.0408131 0.554947 1.17802 0.439019 1.22186C0.269253 1.28606 0.0745535 1.48118 0.0268268 1.63498C0.0021732 1.71441 -0.00537755 2.65232 0.00371827 4.50063C0.0183629 7.477 0.0175904 7.46375 0.222018 8.19968C0.578863 9.48436 1.44469 10.5566 2.87628 11.4868C3.69058 12.0158 4.77439 12.6189 5.31961 12.8462C5.80345 13.048 6.18418 13.051 6.65586 12.8566C7.19883 12.6329 8.29616 12.0246 9.11651 11.4926C10.5487 10.5638 11.4084 9.50035 11.7721 8.208C11.9834 7.45692 11.9815 7.48797 11.9959 4.50609C12.0057 2.46461 11.9986 1.73117 11.9678 1.63571C11.9151 1.47237 11.7333 1.28749 11.5602 1.22125C11.4317 1.17208 6.30713 0.0339271 6.08739 0.00574381C6.02944 -0.00169049 5.9428 -0.00193415 5.89486 0.005165Z"
+                              fill="white"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="container"
+                  style="background: rgba(255, 160, 72, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="food"
+                    style="
+                      background: radial-gradient(
+                        rgba(255, 160, 72, 0),
+                        rgba(255, 160, 72, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(255, 160, 72),
+                          rgb(255, 160, 72)
+                        );
+                        background-size: 100% 54%;
+                      "
+                    >
+                      <div class="icon-ind">
+                        <div class="icon">
+                          <svg
+                            class="ind-icon"
+                            width="16"
+                            height="13"
+                            viewBox="0 0 16 13"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M6.71829 0.00593214C5.04133 0.161963 3.6636 0.705313 2.52685 1.65896C1.39802 2.60597 0.754659 3.82372 0.666109 5.18102C0.653794 5.36961 0.656732 5.5047 0.673173 5.50419C0.688676 5.50371 0.792792 5.48693 0.904535 5.46696C1.19822 5.41442 14.8467 5.41152 15.1543 5.46393L15.3542 5.49799L15.3333 5.17747C15.2961 4.60814 15.1726 4.1033 14.9416 3.57672C14.2066 1.90123 12.438 0.592998 10.3168 0.155787C9.64283 0.0168611 9.51227 0.00766045 8.12484 0.0015097C7.41141 -0.00166734 6.77846 0.000340549 6.71829 0.00593214ZM6.17127 1.64445C6.69816 1.75234 6.82475 2.33762 6.37681 2.59491C6.25663 2.66394 6.2209 2.67116 5.99938 2.67116C5.77787 2.67116 5.74214 2.66394 5.62196 2.59491C5.27857 2.39768 5.25104 1.97836 5.56701 1.75844C5.75002 1.63108 5.93525 1.59613 6.17127 1.64445ZM4.17083 3.27109C4.69773 3.37898 4.82432 3.96427 4.37638 4.22156C4.2562 4.29059 4.22047 4.29781 3.99895 4.29781C3.77744 4.29781 3.74171 4.29059 3.62153 4.22156C3.27814 4.02433 3.2506 3.60501 3.56658 3.38508C3.74959 3.25772 3.93481 3.22277 4.17083 3.27109ZM1.03741 6.53559C0.947169 6.55536 0.814578 6.5959 0.74275 6.62569C0.572401 6.69634 0.294154 6.91157 0.194632 7.04968C-0.213237 7.6156 0.0429432 8.35339 0.74822 8.644C0.837271 8.68067 1.10227 8.74477 1.3371 8.78646C2.44105 8.98231 3.35891 9.34035 4.2637 9.92811C4.70364 10.2139 4.9249 10.2877 5.33987 10.287C5.61421 10.2865 5.92118 10.2178 6.10475 10.1158C6.1713 10.0788 6.34008 9.9735 6.47983 9.88172C7.23124 9.38819 8.12916 9.02519 9.06254 8.83759C9.79855 8.68967 9.96277 8.68212 12.4498 8.68212C13.9501 8.68212 14.7708 8.67279 14.894 8.65434C15.3182 8.59078 15.6734 8.37293 15.8639 8.05952C16.1349 7.61362 15.9912 7.06165 15.5223 6.74738C15.3804 6.65227 15.143 6.55633 14.9688 6.52367C14.8756 6.5062 12.572 6.49792 8.01544 6.49861C2.24504 6.4995 1.17634 6.50516 1.03741 6.53559ZM15.1732 9.70762C15.1154 9.72343 14.1042 9.73957 12.532 9.74978L9.98462 9.76633L9.60604 9.83371C8.69318 9.99614 7.97328 10.282 7.18714 10.7942C6.78684 11.055 6.41879 11.2151 6.01501 11.3039C5.66028 11.382 4.99811 11.3815 4.63972 11.3029C4.24532 11.2163 3.87002 11.052 3.46759 10.7898C2.8718 10.4015 2.36998 10.1682 1.75797 9.99498C1.46834 9.91301 0.748439 9.76641 0.725809 9.78481C0.720339 9.78923 0.737562 9.87748 0.764036 9.98092C0.970487 10.7873 1.54295 11.5727 2.30412 12.0939C2.8718 12.4827 3.46543 12.7337 4.17087 12.8834C4.73764 13.0036 4.81788 13.0059 8.17173 12.9967L11.3287 12.9881L11.6569 12.9217C12.0898 12.8342 12.3322 12.7654 12.6727 12.6336C13.9377 12.1438 14.8577 11.2226 15.2031 10.1001C15.2491 9.95034 15.2823 9.79503 15.2769 9.75492C15.2675 9.68589 15.262 9.68337 15.1732 9.70762Z"
+                              fill="white"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="container"
+                  style="background: rgba(41, 219, 219, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="water"
+                    style="
+                      background: radial-gradient(
+                        rgba(41, 219, 219, 0),
+                        rgba(41, 219, 219, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(23, 182, 182),
+                          rgb(23, 182, 182)
+                        );
+                        background-size: 100% 79%;
+                      "
+                    >
+                      <div class="icon-ind">
+                        <div class="icon">
+                          <svg
+                            class="ind-icon"
+                            width="10"
+                            height="13"
+                            viewBox="0 0 10 13"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M4.82826 0.0515834C4.78965 0.0803091 4.73685 0.14604 4.71096 0.197625C4.6851 0.249209 4.4168 0.611443 4.11475 1.00258C2.23507 3.43677 1.41562 4.63294 0.756649 5.90449C0.207214 6.9647 -0.00152233 7.63032 8.35089e-06 8.31735C0.0052986 10.6972 1.92601 12.7045 4.46119 12.9796C4.84349 13.0211 5.51761 12.9971 5.90978 12.9281C8.15172 12.5337 9.84887 10.7252 9.99064 8.57941C10.0182 8.16222 9.98634 7.84606 9.87551 7.43734C9.57918 6.34445 8.78448 4.87974 7.49356 3.04716C6.64024 1.83583 5.28763 0.103041 5.13512 0.0258547C5.05005 -0.0172212 4.90431 -0.00500449 4.82826 0.0515834Z"
+                              fill="white"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="container"
+                  style="background: rgba(41, 112, 219, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="oxygen"
+                    style="
+                      background: radial-gradient(
+                        rgba(28, 106, 143, 0),
+                        rgba(31, 138, 165, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(22, 115, 177),
+                          rgba(24, 118, 180, 0.877)
+                        );
+                        background-size: 100% 100%;
+                      "
+                    >
+                      <i
+                        class="fa-solid fa-person-swimming"
+                        style="color: white"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="container"
+                  style="background: rgba(204, 41, 219, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="nitrous"
+                    style="
+                      background: radial-gradient(
+                        rgba(213, 41, 219, 0),
+                        rgba(204, 41, 219, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(182, 23, 182),
+                          rgb(182, 23, 182)
+                        );
+                        background-size: 100% 100%;
+                      "
+                    >
+                      <i class="fa-solid fa-meteor" style="color: white"></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="container"
+                  style="background: rgba(103, 41, 219, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="harness"
+                    style="
+                      background: radial-gradient(
+                        rgba(139, 41, 219, 0),
+                        rgba(109, 41, 219, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(118, 23, 182),
+                          rgb(84, 23, 182)
+                        );
+                        background-size: 100% 100%;
+                      "
+                    >
+                      <i
+                        class="fa-solid fa-user-slash"
+                        style="color: white"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li id="parachute" style="display: none">
+                <div class="container" style="background: rgba(0, 0, 0, 0.35)">
+                  <div
+                    class="icon-cont"
+                    style="
+                      background: radial-gradient(
+                        rgba(0, 0, 0, 0),
+                        rgba(0, 0, 0, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(0, 0, 0),
+                          rgb(0, 0, 0)
+                        );
+                        background-size: 100% 100%;
+                      "
+                    >
+                      <i
+                        class="fa-solid fa-parachute-box"
+                        style="color: white"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li id="dev" style="display: none">
+                <div class="container" style="background: rgba(0, 0, 0, 0.35)">
+                  <div
+                    class="icon-cont"
+                    style="
+                      background: radial-gradient(
+                        rgba(0, 0, 0, 0),
+                        rgba(0, 0, 0, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(0, 0, 0),
+                          rgb(0, 0, 0)
+                        );
+                        background-size: 100% 100%;
+                      "
+                    >
+                      <i class="fa-solid fa-terminal" style="color: white; font-size: 11.5px"></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li id="debug" style="display: none">
+                <div class="container" style="background: rgba(0, 0, 0, 0.35)">
+                  <div
+                    class="icon-cont"
+                    style="
+                      background: radial-gradient(
+                        rgba(0, 0, 0, 0),
+                        rgba(0, 0, 0, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(0, 0, 0),
+                          rgb(0, 0, 0)
+                        );
+                        background-size: 100% 100%;
+                      "
+                    >
+                      <i class="fa-solid fa-bug" style="color: white"></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li id="god" style="display: none">
+                <div class="container" style="background: rgba(0, 0, 0, 0.35)">
+                  <div
+                    class="icon-cont"
+                    style="
+                      background: radial-gradient(
+                        rgba(0, 0, 0, 0),
+                        rgba(0, 0, 0, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(0, 0, 0),
+                          rgb(0, 0, 0)
+                        );
+                        background-size: 100% 100%;
+                      "
+                    >
+                      <i class="fa-solid fa-leaf" style="color: white; font-size: 11.5px"></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- <li>
+                <div
+                  class="container enchantment"
+                  style="background: rgba(219, 207, 41, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="database"
+                    style="
+                      background: radial-gradient(
+                        rgba(207, 219, 41, 0),
+                        rgba(219, 216, 41, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(181, 178, 49),
+                          rgb(206, 221, 66)
+                        );
+                        background-size: 100% 100%;
+                      "
+                    >
+                      <i class="fa-solid fa-database" style="color: white"></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="container enchantment"
+                  style="background: rgba(219, 207, 41, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="wind"
+                    style="
+                      background: radial-gradient(
+                        rgba(207, 219, 41, 0),
+                        rgba(219, 216, 41, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(181, 178, 49),
+                          rgb(206, 221, 66)
+                        );
+                        background-size: 100% 100%;
+                      "
+                    >
+                      <i class="fa-solid fa-wind" style="color: white"></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="container enchantment"
+                  style="background: rgba(219, 207, 41, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="exclamation"
+                    style="
+                      background: radial-gradient(
+                        rgba(207, 219, 41, 0),
+                        rgba(219, 216, 41, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(181, 178, 49),
+                          rgb(206, 221, 66)
+                        );
+                        background-size: 100% 100%;
+                      "
+                    >
+                      <i
+                        class="fa-solid fa-exclamation"
+                        style="color: white"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="container enchantment"
+                  style="background: rgba(219, 207, 41, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="lightbulb"
+                    style="
+                      background: radial-gradient(
+                        rgba(207, 219, 41, 0),
+                        rgba(219, 216, 41, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(181, 178, 49),
+                          rgb(206, 221, 66)
+                        );
+                        background-size: 100% 100%;
+                      "
+                    >
+                      <i class="fa-solid fa-lightbulb" style="color: white"></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="container enchantment"
+                  style="background: rgba(219, 207, 41, 0.35)"
+                >
+                  <div
+                    class="icon-cont"
+                    name="dollar"
+                    style="
+                      background: radial-gradient(
+                        rgba(207, 219, 41, 0),
+                        rgba(219, 216, 41, 0.5)
+                      );
+                    "
+                  >
+                    <div
+                      class="value"
+                      style="
+                        background-repeat: no-repeat;
+                        background-position: center bottom;
+                        background-image: radial-gradient(
+                          rgb(181, 178, 49),
+                          rgb(206, 221, 66)
+                        );
+                        background-size: 100% 100%;
+                      "
+                    >
+                      <i
+                        class="fa-solid fa-dollar-sign"
+                        style="color: white"
+                      ></i> -->
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          id="pusula"
+          class="ov absolute top-0 flex h-9 w-full justify-center"
+          style="display: none"
+        >
+          <div
+            class="absolute w-[60rem]"
+            style="
+              -webkit-mask-image: linear-gradient(
+                transparent 0%,
+                rgb(0, 0, 0) 0%,
+                rgb(0, 0, 0) 80%,
+                transparent 100%
+              );
+            "
+          >
+            <div
+              class="h-[3rem] w-full"
+              style="
+                background: rgba(0, 0, 0, 0.4);
+                -webkit-mask-image: linear-gradient(
+                  to right,
+                  transparent 0%,
+                  rgb(0, 0, 0) 20%,
+                  rgb(0, 0, 0) 80%,
+                  transparent 100%
+                );
+              "
+            ></div>
+          </div>
+          <div
+            id="pusulaimg"
+            class="absolute mt-[0.75vh] flex h-[3.33vh] w-[33.3vh] items-center justify-center"
+            style="
+              -webkit-mask-image: linear-gradient(
+                to right,
+                transparent 0%,
+                rgb(0, 0, 0) 10%,
+                rgb(0, 0, 0) 90%,
+                transparent 100%
+              );
+              background: url(compas.png) 28.4651vh 0px / 100% repeat-x;
+              transition: 0.5s all;
+            "
+          ></div>
+          <div
+            id="waypointPusula"
+            class="absolute top-1 mt-[-0.25vh] text-center"
+            style="
+              transform: translateX(-1.75229vh);
+              opacity: 0.66;
+              transition: 0.5s all;
+            "
+          >
+            <img
+              class="h-[2.5vh] w-[2.5vh]"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAWdSURBVFhHvVhbbFRVFF3TmXbe7+ljhmkBsWClQuBCjEAU5RF/SNAPDTFGP8iEGP6QGD/0w4jBEP/4wUeiJIgG0GgMJiTqD8YHVt7vlrbAdEqx03amnUdn5l73PnPvMNPOQHtLWDs7wz2nZ5+199l7n3vBQ4Kk6pxhUH/nggipRqaL9NPiP/XBqP7qhSDTNM8RabAYpUwqH6PnECkTe+TgqBxoDDkUo2mjYqrbqri8TQqPkTJRXZhLhLawZtOrQrvnfYSNoc2IDZiR8vRKk5mE7kjpJSSOymh6fstbrvextHMp/H4/2szzcfeWBWOOXik3OaaLlB5CKpkNke3WXVizbg1MJpMoD7fbjbClFbFoHRJ2JiUipemMUKf+zhSivL2B+ZGX829i7bNri3VKajAYhIZbw3i1cxuy6ZXa388KsyXEoE1oc8GkNh40Xwt6CEFRGmA1WdWnKSAeRpMRNtSYfwB0EWLw8dQEH+GjjFA5FFlBNBpFX38fEokEDagTOnE/N6olJI9F7K52aVPiXbS4W9CX6MM1XMUkSSPJYiyBy+HCtxPfICEf0q6SWqU/bbwaIVFJZVoBp9cvpccDsBVWIdtwCdnM6QqjDneblJ5YgkJBgcV6BpnUf/cjw1px900lpF2U3PSkjvwzqCexkSjqWWRITht+h8V2EumJtOa9tqlY62+xR0aG7GiX34CHxKi2O5lkXJWY9Qi1hpi2vkSqnBAbi/iabJGx4RXY6f8Ay1csFxOlBJaB4yeO40frHjJ2ZZoxFcIpT8AaqYu/grc7diMYDhZ3Ip80x/ad2Ide6yGK4O0KO+WdWtxNk9lVoV3Bj9HxZAcsZguMRvKv7p4e7D6IeO44G/iJdCoZBs+F6OYP5evTobXul9DY2Fhcz7ZU7fR14na/gqSzR8plk6VrRqsy4VV9w2ppp/dDLGp/nM7fUpwpw81bN3HL0K0+lY6pGsScqT6JC9cuIJGk6psCn9+HbcteQ+f4Drh9C0upwoRE4vqafJEncpvEMdmsNorw9HwfGRuh0Yz69GDwUY+QZLNZdeQeFEVBMBTEas/TVBgcnCIPJiS8iQ/Fuy7V/YXLFy9XNcBwuVyUAXSRzhC8qZvE3GBWR+6Bcyk2EMMfYydhtd/gIcFDOzJ+6PI2/YlPBt/DjZ6eqqQWti1Es/KY+lT0qAbEXD5nx1Pty4QjUzE6OorDZ7/GVcfnGLlbqrYuLalFUqXGczG37470y9BFLJroRHNLM2RZFt6wtyyp6yncsF4MFfLxUiKygTIUq8xv3WJOvYj1wfVwuBxirayQLersbGv/b/txxfIltY5oRZVV7UONIV8kPrQSy/PrRA+xkGjgHnLG8Cv1oVNkLFPyTEwWIyMFgnZab0OHvB0+xSdscE7mSSZI2Ea/9TC1jkoyjOmZq5JSdRqcngB1Yh8ChecwYv6bjJ6tiJDTs0BKjbdTpzZTpZ6iPnPnXxqudsNpjpTIMKoRYtTKDx6P2J3t0obkO2i2NaM73Y1uXEeBJEDCd5nX7MWxyaOIy18xGS0KtUhVoBahWmBCBzz+xdLW0b14YfMLMNQZEB2IIp/Pw+v1wuV0YXBgEHvP7cFw4SBvuIP0H148E+h//eCVpOK1dV4YC+YvgNvlLrpYabVaZGpCHyHalCulJmiKq0oPdBEy0LtPOp+u7juNFQoFJKmS9EAPoS4RoftEgKPHrxp6MNvvMtEMM6nR2LX6lNQUC6O1rVVMaHffQHQAx84fwbD1Z+rUY/xGwIk94+8yPR+KvEFIlntipwuDUnh4EfwBv/hYZDI/nPseF+xfIDXer5U7k5ox9BBiCFKK3BvrynVLiydXIEdl/925ozjv+AwTyRKZiqb3KMBd/YCpfrXiMbyu2BxhTqw5/e/Hw4Ag5fSYHwqZ2XbqWignMYdjAv4H7BgS9pTzOO8AAAAASUVORK5CYII="
+            />
+          </div>
+          <div class="absolute top-0 mt-[-0.1vh] text-center">
+            <svg
+              width="3.42vh"
+              height="3.42vh"
+              viewBox="0 0 37 37"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_d_5634_1318)">
+                <rect
+                  x="18.364"
+                  y="8"
+                  width="9"
+                  height="9"
+                  transform="rotate(45 18.364 8)"
+                  fill="#00F8B9"
+                ></rect>
+              </g>
+              <defs>
+                <filter
+                  id="filter0_d_5634_1318"
+                  x="0.6"
+                  y="0.6"
+                  width="35.5279"
+                  height="35.5279"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood
+                    flood-opacity="0"
+                    result="BackgroundImageFix"
+                  ></feFlood>
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    result="hardAlpha"
+                  ></feColorMatrix>
+                  <feOffset dy="4"></feOffset>
+                  <feGaussianBlur stdDeviation="5.7"></feGaussianBlur>
+                  <feComposite in2="hardAlpha" operator="out"></feComposite>
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0.972549 0 0 0 0 0.72549 0 0 0 0.55 0"
+                  ></feColorMatrix>
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow_5634_1318"
+                  ></feBlend>
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow_5634_1318"
+                    result="shape"
+                  ></feBlend>
+                </filter>
+              </defs>
+            </svg>
+          </div>
+          <div
+            class="text-outline roadText absolute mt-[1vh] flex w-full justify-center text-center text-[1.35vh] font-bold text-neutral-300 shadow-black"
+          >
+            <div class="w-full text-right" id="zoneName">Little Seoul</div>
+            <div class="w-[60rem]"></div>
+            <div class="w-full text-left" id="streetName">
+              Ginger St &amp; Palomino Ave
+            </div>
+          </div>
+        </div>
+        <div
+          id="carhud"
+          class="absolute top-0 h-screen w-screen"
+          style="display: none"
+        >
+          <div class="absolute bottom-[3rem] left-[19rem]">
+            <div class="relative flex h-[7rem]">
+              <div
+                class="font-speedo flex w-[9rem] flex-col justify-start gap-4 text-white"
+              >
+                <div class="flex justify-start gap-2 text-left text-white">
+                  <div
+                    class="flex h-full w-8 flex-col items-center justify-center gap-1 self-end rounded-sm border-2 border-gray-400/50 font-bold text-gray-700 [background:radial-gradient(50%_50%_at_50%_50%,_#00f8b9,_#0e8e6e)]"
+                  >
+                    <span class="h-5 text-xl" id="gearText">N</span>
+                    <span class="h-4 w-4 text-gray-700">
+                      <svg
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="fa"
+                        viewBox="0 0 512 512"
+                        style="
+                          height: 1em;
+                          vertical-align: -0.002em;
+                          transform-origin: center center;
+                          overflow: visible;
+                        "
+                      >
+                        <g
+                          transform="translate(256 256)"
+                          transform-origin="128 0"
+                        >
+                          <g transform="translate(12.8,-51.2) scale(0.75,0.75)">
+                            <path
+                              d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"
+                              fill="currentColor"
+                              transform="translate(-256 -256)"
+                            ></path>
+                          </g>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="relative">
+                    <span
+                      class="absolute left-[0.25rem] top-[-0.5rem] text-[3.5rem] leading-none shadow-black/30 [text-shadow:_-2px_2px_0_var(--tw-shadow-color),_2px_2px_0_var(--tw-shadow-color),_-2px_-2px_0_var(--tw-shadow-color),_2px_-2px_0_var(--tw-shadow-color)]"
+                      ><span class="speedometera" style="color: gray">0</span
+                      ><span class="speedometera" style="color: gray">0</span
+                      ><span class="speedometera" style="color: gray"
+                        >0</span
+                      ></span
+                    ><span
+                      class="absolute left-[4.6rem] top-[-1.6rem] text-neutral-300"
+                      >MPH</span
+                    >
+                  </div>
+                </div>
+                <div class="relative h-7 w-full rounded-sm">
+                  <div class="absolute bottom-2 flex h-full gap-1">
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-mediumspringgreen ring-mediumspringgreen"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-mediumspringgreen ring-mediumspringgreen"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-mediumspringgreen ring-mediumspringgreen"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-mediumspringgreen ring-mediumspringgreen"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                    <div
+                      class="rpm-hud h-full w-1 rounded-sm ring-2 ring-opacity-5 bg-neutral-600 ring-neutral-600"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <style>
+                object {
+                  filter: invert(1);
+                }
+              </style>
+              
+              <div class="absolute left-[9.5rem] top-[-1.15rem] flex h-[6.15rem] gap-1">
+                <div class="icon-outline flex w-[0.75rem] flex-col gap-2 from-neutral-800/30 to-white text-white">
+                  <object id="vehicleIcon1" data=" noun-electric-vehicle-charging-station-1287583.svg" type="image/svg+xml"></object>
+                  <object id="vehicleIcon2" data="noun-fuel-38066.svg" type="image/svg+xml"></object>
+                  <div
+                    class="flex h-full w-full flex-col-reverse overflow-hidden rounded-sm border-4 border-[var(--tw-gradient-from)] bg-[var(--tw-gradient-from)]"
+                  >
+                    <div
+                      class="w-full bg-[var(--tw-gradient-to)]"
+                      id="fuelLevel1"
+                      style="height: 40%"
+                    ></div>
+                  </div>
+                </div>             
+                <div class="icon-outline flex w-[0.75rem] flex-col gap-2 from-neutral-800/30 to-white text-white">
+                  <object id="vehicleIcon3" data="Font_Awesome_5_solid_car-battery.svg" type="image/svg+xml"></object>
+                  <object id="vehicleIcon4" data="Font_Awesome_5_solid_car-battery.svg" type="image/svg+xml"></object>
+                  <div
+                    class="flex h-full w-full flex-col-reverse overflow-hidden rounded-sm border-4 border-[var(--tw-gradient-from)] bg-[var(--tw-gradient-from)]"
+                  >
+                    <div
+                      class="w-full bg-[var(--tw-gradient-to)]"
+                      id="fuelLevel2"
+                      style="height: 40%"
+                    ></div>
+                  </div>
+                </div>
+                <div class="icon-outline flex w-[0.75rem] flex-col gap-2 from-red-950/30 to-white text-white">
+                  <object id="vehicleIcon5" data="pursuit-mode.svg" type="image/svg+xml" style="color: red; background-image: red"></object>
+
+                  <div
+                    class="flex h-full w-full flex-col-reverse overflow-hidden rounded-sm border-4 border-[var(--tw-gradient-from)] bg-[var(--tw-gradient-from)]"
+                  >
+                    <div
+                      class="w-full bg-[var(--tw-gradient-to)]"
+                      id="PursuitMode"
+                      style="height: 40%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute left-[0.5rem] top-[-1.5rem] flex gap-2 items-center">
+                <div class="relative flex flex-row items-center" id="seatbelt">
+                    <div class="text-orange-500">
+                        <img class="w-4" style="margin-bottom: 0.5em;" alt="" src="group-11-53332fd1.svg" />
+                    </div>
+                </div>
+                <div class="relative flex flex-row items-center flex-shrink-0" id="lowfuel">
+                    <div class="text-orange-500">
+                        <img class="pulsate" style="width: 1.3em; height: 1.3em; margin-bottom: 0.7em;" alt="" src="engine_orange.svg" />
+                    </div>
+                </div>
+                <div class="relative flex flex-row items-center flex-shrink-0" id="engine">
+                    <div class="text-orange-500">
+                        <img style="width: 1.3em; height: 1.3em; margin-bottom: 0.7em;" alt="" src="engine_red.svg" />
+                    </div>
+                </div>       
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jss1" style="z-index: 50">
+      <div class="black-bar-bottom black-bar"></div>
+      <div class="black-bar-top black-bar"></div>
+    </div>
+  </body>
+</html>
