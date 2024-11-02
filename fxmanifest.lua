@@ -26,5 +26,5 @@ server_script {
 }
 
 files {
-	'UI/*',
+	'web/*',
 }
