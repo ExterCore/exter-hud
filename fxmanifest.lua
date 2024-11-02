@@ -6,7 +6,7 @@ author "sobing"
 
 description "exter-hud | HUD System LiKE 4.0"
 
-version '1.0'
+version '1.2'
 
 ui_page 'web/index.html'
 
