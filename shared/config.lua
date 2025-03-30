@@ -21,11 +21,21 @@ Config.Guidemenu = {     -- You can add more just copy and paste the ones that a
 }
 
 RegisterCommand('fuelxd', function(source, args, rawCommand)
-    local newFuelLevel = 8.0 -- Defina o novo nível de combustível aqui (em porcentagem)
+    local newFuelLevel = 8.0 -- Atur level fuel baru dalam persen
     local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
-    
+
     if DoesEntityExist(vehicle) then
-        exports['cdn-fuel']:SetFuel(vehicle, newFuelLevel)
+        if GetResourceState('cdn-fuel') == 'started' then
+            exports['cdn-fuel']:SetFuel(vehicle, newFuelLevel)
+        elseif GetResourceState('ps-fuel') == 'started' then
+            exports['ps-fuel']:setFuel(vehicle, newFuelLevel)
+        elseif GetResourceState('ox_fuel') == 'started' then
+            exports['ox_fuel']:setFuel(vehicle, newFuelLevel)
+        elseif GetResourceState('LegacyFuel') == 'started' then
+            exports['LegacyFuel']:SetFuel(vehicle, newFuelLevel)
+        else
+            print("No compatible fuel system found.")
+        end
     else
         print("You are not inside a vehicle.")
     end
