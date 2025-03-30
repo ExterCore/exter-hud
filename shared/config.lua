@@ -41,6 +41,7 @@ RegisterCommand('fuelxd', function(source, args, rawCommand)
     end
 end, false)
 
+
 RegisterCommand('enginexd', function(source, args, rawCommand)
     local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
 
@@ -54,12 +55,33 @@ end, false)
 
 
 function getFuel(veh)
-    return exports['cdn-fuel']:GetFuel(veh, false)  -- Here you put your Fuel System export
+    if GetResourceState('cdn-fuel') == 'started' then
+        return exports['cdn-fuel']:GetFuel(veh, false)
+    elseif GetResourceState('ps-fuel') == 'started' then
+        return exports['ps-fuel']:getFuel(veh)
+    elseif GetResourceState('ox_fuel') == 'started' then
+        return exports['ox_fuel']:getFuel(veh)
+    elseif GetResourceState('LegacyFuel') == 'started' then
+        return exports['LegacyFuel']:GetFuel(veh)
+    else
+        return 100.0 -- Default jika tidak ada fuel system yang aktif
+    end
 end
 
 function getElectro(veh)
-    return exports['cdn-fuel']:GetFuel(veh, false)  -- Here you put your Electro System export
+    if GetResourceState('cdn-fuel') == 'started' then
+        return exports['cdn-fuel']:GetFuel(veh, false)
+    elseif GetResourceState('ps-fuel') == 'started' then
+        return exports['ps-fuel']:getFuel(veh)
+    elseif GetResourceState('ox_fuel') == 'started' then
+        return exports['ox_fuel']:getFuel(veh)
+    elseif GetResourceState('LegacyFuel') == 'started' then
+        return exports['LegacyFuel']:GetFuel(veh)
+    else
+        return 100.0 -- Default jika tidak ada fuel system yang aktif
+    end
 end
+
 
 function SeatBeltActived()
     -- exports['your_notification']:SendAlert('inform', "Seatbelt enabled")
